@@ -17,6 +17,7 @@
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
+/* `unique_activity_id`为约束名，可以定义约束名，也可以不用， AUTO_INCREMENT=2表示从2开始增加   */
 -- ----------------------------
 -- Table structure for activity
 -- ----------------------------
