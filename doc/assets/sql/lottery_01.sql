@@ -1,4 +1,6 @@
+/*
 create database lottery_01;
+*/
 
 create table user_take_activity
 (

@@ -1,5 +1,5 @@
-create database lottery;
-
+--create database lottery;
+--use lottery;
 /*  activity_id_uindex表示约束名  */
 -- auto-generated definition
 create table activity
@@ -70,3 +70,5 @@ create table strategy_detail
     updateTime datetime      null comment '修改时间'
 )
     comment '策略明细';
+select * from award;
+alter table strategy_detail add awardSurplusCount int default 0 null comment '奖品剩余库存';
