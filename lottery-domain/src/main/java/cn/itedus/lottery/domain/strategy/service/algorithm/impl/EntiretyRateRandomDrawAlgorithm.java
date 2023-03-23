@@ -32,8 +32,8 @@ public class EntiretyRateRandomDrawAlgorithm extends BaseAlgorithm {
             differenceDenominator = differenceDenominator.add(awardRateInfo.getAwardRate());
         }
         //前置判断
-        if(differenceAwardRateList.size()==0) return null;
-        if(differenceAwardRateList.size()==1) return differenceAwardRateList.get(0).getAwardId();
+        if(differenceAwardRateList.size()==0) {return null;}
+        if(differenceAwardRateList.size()==1) {return differenceAwardRateList.get(0).getAwardId();}
         //  获取随机概率值
         int randomVal=this.generateSecureRandomIntCode(100);
         //循环获取奖品

@@ -8,14 +8,18 @@ package cn.itedus.lottery.domain.strategy.model.vo;
  */
 public class DrawAwardInfo {
     private String rewardId;
+    private Integer awardType;
     private String awardName;
+    private  String awardContent;
 
     public DrawAwardInfo() {
     }
 
-    public DrawAwardInfo(String rewardId, String awardName) {
+    public DrawAwardInfo(String rewardId, Integer awardType, String awardName, String awardContent) {
         this.rewardId = rewardId;
+        this.awardType = awardType;
         this.awardName = awardName;
+        this.awardContent = awardContent;
     }
 
     public String getRewardId() {
@@ -26,11 +30,27 @@ public class DrawAwardInfo {
         this.rewardId = rewardId;
     }
 
+    public Integer getAwardType() {
+        return awardType;
+    }
+
+    public void setAwardType(Integer awardType) {
+        this.awardType = awardType;
+    }
+
     public String getAwardName() {
         return awardName;
     }
 
     public void setAwardName(String awardName) {
         this.awardName = awardName;
+    }
+
+    public String getAwardContent() {
+        return awardContent;
+    }
+
+    public void setAwardContent(String awardContent) {
+        this.awardContent = awardContent;
     }
 }

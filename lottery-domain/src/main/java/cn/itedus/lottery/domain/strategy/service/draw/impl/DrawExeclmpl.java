@@ -21,6 +21,9 @@ import org.slf4j.Logger;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 按照具体情况实现类
+ */
 @Service("drawExec")
 public class DrawExeclmpl extends AbstractDrawBase{
     private Logger logger= LoggerFactory.getLogger(DrawExeclmpl.class);
