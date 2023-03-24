@@ -1,4 +1,4 @@
-package cn.itedus.lottery.test;
+package cn.itedus.lottery.test.domain;
 
 import cn.itedus.lottery.domain.strategy.model.vo.AwardRateInfo;
 import org.junit.Before;
@@ -16,7 +16,7 @@ import java.util.List;
 @SpringBootTest
 public class DrawAlgorithmTest {
 //    @Resource(name="singleRateRandomDrawAlgorithm")
-    @Resource(name = "defaultRateRandomDrawAlgorithm")
+    @Resource(name = "entiretyRateRandomDrawAlgorithm")
     private IDrawAlgorithm randomDrawAlgorithm;
 
     @Before

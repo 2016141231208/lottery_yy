@@ -1,25 +1,40 @@
-package cn.itedus.lottery.infrastructure.po;
+package cn.itedus.lottery.domain.strategy.model.vo;
 
 import java.util.Date;
 
-public class Strategy {
-    private Long id;
+/**
+ * @description:
+ * @author：yanliqiao
+ * @date: 2023/3/23
+ * @Copyright： 练习
+ */
+public class StrategyBriefVO {
+    /**
+     * 策略ID
+     */
     private Long strategyId;
+    /**
+     * 策略描述
+     */
     private String strategyDesc;
+    /**
+     * 策略方式「1:单项概率、2:总体概率」
+     */
+
     private Integer strategyMode;
-    private Integer grantType;
+    /**
+     * 发放奖品方式「1:即时、2:定时[含活动结束]、3:人工」
+     */
+
+    private  Integer grantType;
+    /**
+     * 开放奖品时间
+     */
     private Date grantDate;
+    /**
+     * 扩展信息
+     */
     private String extInfo;
-    private Date createTime;
-    private Date updateTime;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public Long getStrategyId() {
         return strategyId;
@@ -67,21 +82,5 @@ public class Strategy {
 
     public void setExtInfo(String extInfo) {
         this.extInfo = extInfo;
-    }
-
-    public Date getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
-
-    public Date getUpdateTime() {
-        return updateTime;
-    }
-
-    public void setUpdateTime(Date updateTime) {
-        this.updateTime = updateTime;
     }
 }

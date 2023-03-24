@@ -1,13 +1,16 @@
 package cn.itedus.lottery.domain.strategy.service.draw;
 
+import cn.itedus.lottery.common.Constants;
 import cn.itedus.lottery.domain.strategy.service.algorithm.IDrawAlgorithm;
-import org.apache.ibatis.annotations.Mapper;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentMap;
+
+/**
+ * 抽奖统一配置信息类
+ */
 
 public class DrawConfig {
     @Resource
@@ -18,7 +21,7 @@ public class DrawConfig {
     protected static Map<Integer,IDrawAlgorithm> drawAlgorithmGroup=new ConcurrentHashMap<>();
     @PostConstruct
     public void init(){
-        drawAlgorithmGroup.put(1,entiretyRateRandomDrawAlgorithm);
-        drawAlgorithmGroup.put(2,singleRateRandomDrawAlgorithm);
+        drawAlgorithmGroup.put(Constants.StrategyMode.ENTIRETY.getCode(),entiretyRateRandomDrawAlgorithm);
+        drawAlgorithmGroup.put(Constants.StrategyMode.SINGLE.getCode(), singleRateRandomDrawAlgorithm);
     }
 }

@@ -7,8 +7,18 @@ public class StrategyDetail {
     private String id;
     private Long strategyId;
     private String awardId;
+    private  String awardName;
     private Integer awardCount;
     private Integer awardSurplusCount;
+
+    public String getAwardName() {
+        return awardName;
+    }
+
+    public void setAwardName(String awardName) {
+        this.awardName = awardName;
+    }
+
     private BigDecimal awardRate;
     private String createTime;
     private String updateTime;

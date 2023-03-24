@@ -1,37 +1,46 @@
 package cn.itedus.lottery.domain.strategy.model.aggregates;
 
-import cn.itedus.lottery.infrastructure.po.Strategy;
-import cn.itedus.lottery.infrastructure.po.StrategyDetail;
+
+import cn.itedus.lottery.domain.strategy.model.vo.StrategyBriefVO;
+import cn.itedus.lottery.domain.strategy.model.vo.StrategyDetailBriefVO;
 
 import java.util.List;
 
 public class StrategyRich {
     private Long strategyId;
-    private Strategy strategy;
-    private List<StrategyDetail> strategyDetailList;
-    public StrategyRich(){
+    private StrategyBriefVO strategy;
+    private List<StrategyDetailBriefVO> strategyDetailList;
+
+    public StrategyRich() {
     }
-    public StrategyRich(Long strategyId,Strategy strategy,List<StrategyDetail> strategyDetailList){
-        this.strategyId=strategyId;
-        this.strategy=strategy;
-        this.strategyDetailList=strategyDetailList;
+
+    public StrategyRich(Long strategyId, StrategyBriefVO strategy, List<StrategyDetailBriefVO> strategyDetailList) {
+        this.strategyId = strategyId;
+        this.strategy = strategy;
+        this.strategyDetailList = strategyDetailList;
     }
-    public Long getStrategyId(){
+
+    public Long getStrategyId() {
         return strategyId;
     }
-    public void setStrategyId(Long strategyId){
-        this.strategyId=strategyId;
+
+    public void setStrategyId(Long strategyId) {
+        this.strategyId = strategyId;
     }
-    public Strategy getStrategy(){
+
+    public StrategyBriefVO getStrategy() {
         return strategy;
     }
-    public void setStrategy(Strategy strategy){
-        this.strategy=strategy;
+
+    public void setStrategy(StrategyBriefVO strategy) {
+        this.strategy = strategy;
     }
-    public List<StrategyDetail> getStrategyDetailList(){
+
+    public List<StrategyDetailBriefVO> getStrategyDetailList() {
         return strategyDetailList;
     }
-    public void setStrategyDetailList(List<StrategyDetail> strategyDetailList){
-        this.strategyDetailList=strategyDetailList;
+
+    public void setStrategyDetailList(List<StrategyDetailBriefVO> strategyDetailList) {
+        this.strategyDetailList = strategyDetailList;
     }
 }

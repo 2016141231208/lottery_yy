@@ -8,7 +8,6 @@ public class Award {
    private String awardId;
 
    private Integer awardType;
-   private Integer awardCount;
    private String awardName;
    private String awardContent;
    private Date createTime;
@@ -30,12 +29,6 @@ public class Award {
    }
    public void setAwardType(Integer awardType){
        this.awardType=awardType;
-   }
-   public Integer getAwardCount(){
-       return awardCount;
-   }
-   public void setAwardCount(Integer awardCount){
-       this.awardCount=awardCount;
    }
    public String getAwardName(){
        return awardName;
