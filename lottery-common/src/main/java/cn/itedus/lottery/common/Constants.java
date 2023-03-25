@@ -266,4 +266,13 @@ public class Constants {
             this.info = info;
         }
     }
+
+    /**
+     * Ids生成策略枚举
+     */
+    public  enum Ids{
+        SnowFlake,
+        ShortCode,
+        RandomNumeric;
+    }
 }
