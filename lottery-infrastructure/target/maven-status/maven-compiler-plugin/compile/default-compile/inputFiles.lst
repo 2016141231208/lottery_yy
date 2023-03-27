@@ -1,11 +1,15 @@
+D:\idea_workplace\lottery_yy\lottery-infrastructure\src\main\java\cn\itedus\lottery\infrastructure\po\StrategyDetail.java
+D:\idea_workplace\lottery_yy\lottery-infrastructure\src\main\java\cn\itedus\lottery\infrastructure\repository\StrategyRepository.java
 D:\idea_workplace\lottery_yy\lottery-infrastructure\src\main\java\cn\itedus\lottery\infrastructure\dao\IStrategyDao.java
 D:\idea_workplace\lottery_yy\lottery-infrastructure\src\main\java\cn\itedus\lottery\infrastructure\po\Activity.java
 D:\idea_workplace\lottery_yy\lottery-infrastructure\src\main\java\cn\itedus\lottery\infrastructure\repository\AwardRepository.java
+D:\idea_workplace\lottery_yy\lottery-infrastructure\src\main\java\cn\itedus\lottery\infrastructure\po\UserTakeActivity.java
 D:\idea_workplace\lottery_yy\lottery-infrastructure\src\main\java\cn\itedus\lottery\infrastructure\dao\IAwardDao.java
-D:\idea_workplace\lottery_yy\lottery-infrastructure\src\main\java\cn\itedus\lottery\infrastructure\po\StrategyDetail.java
-D:\idea_workplace\lottery_yy\lottery-infrastructure\src\main\java\cn\itedus\lottery\infrastructure\repository\StrategyRepository.java
+D:\idea_workplace\lottery_yy\lottery-infrastructure\src\main\java\cn\itedus\lottery\infrastructure\po\UserStrategyExport.java
 D:\idea_workplace\lottery_yy\lottery-infrastructure\src\main\java\cn\itedus\lottery\infrastructure\repository\ActivityRepository.java
 D:\idea_workplace\lottery_yy\lottery-infrastructure\src\main\java\cn\itedus\lottery\infrastructure\dao\IStrategyDetailDao.java
 D:\idea_workplace\lottery_yy\lottery-infrastructure\src\main\java\cn\itedus\lottery\infrastructure\po\Award.java
 D:\idea_workplace\lottery_yy\lottery-infrastructure\src\main\java\cn\itedus\lottery\infrastructure\dao\IActivityDao.java
+D:\idea_workplace\lottery_yy\lottery-infrastructure\src\main\java\cn\itedus\lottery\infrastructure\dao\IUserTakeActivityDao.java
+D:\idea_workplace\lottery_yy\lottery-infrastructure\src\main\java\cn\itedus\lottery\infrastructure\dao\IUserStrategyExportDao.java
 D:\idea_workplace\lottery_yy\lottery-infrastructure\src\main\java\cn\itedus\lottery\infrastructure\po\Strategy.java

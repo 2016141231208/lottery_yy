@@ -1,4 +1,8 @@
 cn\itedus\lottery\test\domain\DrawAlgorithmTest.class
+cn\itedus\lottery\test\domain\SupportTest.class
+cn\itedus\lottery\test\dao\UserStrategyExportDaoTest.class
+cn\itedus\lottery\test\dao\UserTakeActivityDaoTest.class
 cn\itedus\lottery\test\ApiTest.class
+cn\itedus\lottery\test\dao\ActivityDaoTest.class
 cn\itedus\lottery\test\domain\ActivityTest.class
 cn\itedus\lottery\test\SpringRunnerTest.class
