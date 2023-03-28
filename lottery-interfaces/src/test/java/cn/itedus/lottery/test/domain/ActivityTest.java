@@ -3,11 +3,14 @@ package cn.itedus.lottery.test.domain;
 import cn.itedus.lottery.common.Constants;
 import cn.itedus.lottery.domain.activity.model.aggregates.ActivityConfigRich;
 import cn.itedus.lottery.domain.activity.model.req.ActivityConfigReq;
+import cn.itedus.lottery.domain.activity.model.req.PartakeReq;
+import cn.itedus.lottery.domain.activity.model.res.PartakeResult;
 import cn.itedus.lottery.domain.activity.model.vo.ActivityVO;
 import cn.itedus.lottery.domain.activity.model.vo.AwardVO;
 import cn.itedus.lottery.domain.activity.model.vo.StrategyDetailVO;
 import cn.itedus.lottery.domain.activity.model.vo.StrategyVO;
 import cn.itedus.lottery.domain.activity.service.deploy.IActivityDeploy;
+import cn.itedus.lottery.domain.activity.service.partake.IActivityPartake;
 import cn.itedus.lottery.domain.activity.service.stateflow.IStateHandler;
 import com.alibaba.fastjson.JSON;
 import org.junit.Before;
@@ -20,9 +23,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 
 /**
@@ -42,6 +43,9 @@ public class ActivityTest {
     private IStateHandler stateHandler;
 
     private ActivityConfigRich activityConfigRich;
+
+    @Resource
+    private IActivityPartake activityPartake;
     /**
      * TODO：后面编写ID生成策略
      */
@@ -165,6 +169,23 @@ public class ActivityTest {
         logger.info("审核通过，测试：{}",JSON.toJSONString(stateHandler.checkPass(120981321L,Constants.ActivityState.ARRAIGNMENT)));
         logger.info("运行活动，测试：{}",JSON.toJSONString(stateHandler.doing(120981321L,Constants.ActivityState.PASS)));
         logger.info("二次提审，测试：{}",JSON.toJSONString(stateHandler.checkPass(120981321L,Constants.ActivityState.EDIT)));
+    }
+
+    @Test
+    public void test_activityPartake(){
+        Date date = new Date();
+        GregorianCalendar gc = new GregorianCalendar();
+        gc.set(Calendar.YEAR,2021);//设置年
+        gc.set(Calendar.MONTH, 9);//这里0是1月..以此向后推
+        gc.set(Calendar.DAY_OF_MONTH, 2);//设置天
+        gc.set(Calendar.HOUR_OF_DAY,5);//设置小时
+        gc.set(Calendar.MINUTE, 7);//设置分
+        gc.set(Calendar.SECOND, 6);//设置秒
+        date = gc.getTime();
+        PartakeReq req=new PartakeReq("Uhdgkw766120d", 100001L, date);
+        PartakeResult res=activityPartake.doPartake(req);
+        logger.info("请求参数：{}", JSON.toJSONString(req));
+        logger.info("测试结果：{}", JSON.toJSONString(res));
     }
 
 }
