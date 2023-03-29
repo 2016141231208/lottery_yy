@@ -27,8 +27,8 @@ public class DrawStrategySupport extends DrawConfig{
 
     /**
      * 查看奖品详情
-     * @param awardId
-     * @return
+     * @param awardId 奖品ID
+     * @return 中奖详情
      */
     protected AwardBriefVO queryAwardInfoByAwardId(String awardId) {
         return strategyRepository.queryAwardInfo(awardId);

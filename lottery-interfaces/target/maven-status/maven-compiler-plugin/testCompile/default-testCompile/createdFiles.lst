@@ -6,3 +6,4 @@ cn\itedus\lottery\test\ApiTest.class
 cn\itedus\lottery\test\dao\ActivityDaoTest.class
 cn\itedus\lottery\test\domain\ActivityTest.class
 cn\itedus\lottery\test\SpringRunnerTest.class
+cn\itedus\lottery\test\application\ActivityProcessTest.class

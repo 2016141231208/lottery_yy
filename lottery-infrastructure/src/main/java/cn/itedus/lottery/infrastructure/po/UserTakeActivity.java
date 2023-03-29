@@ -3,12 +3,14 @@ package cn.itedus.lottery.infrastructure.po;
 import java.util.Date;
 
 /**
- * @description:用户领取活动表
- * @author：yanliqiao
- * @date: 2023/3/27
- * @Copyright： 练习
+ * @description: 用户领取活动表
+ * @author: 小傅哥，微信：fustack
+ * @date: 2021/9/22
+ * @github: https://github.com/fuzhengwei
+ * @Copyright: 公众号：bugstack虫洞栈 | 博客：https://bugstack.cn - 沉淀、分享、成长，让自己和他人都能有所收获！
  */
 public class UserTakeActivity {
+
     /**
      * 自增ID
      */
@@ -37,6 +39,18 @@ public class UserTakeActivity {
      * 领取次数
      */
     private Integer takeCount;
+
+    /**
+     * 策略ID
+     */
+    private Long strategyId;
+
+    /**
+     * 活动单使用状态 0未使用、1已使用
+     * Constants.TaskState
+     */
+    private Integer state;
+
     /**
      * 防重ID
      */
@@ -107,6 +121,22 @@ public class UserTakeActivity {
         this.takeCount = takeCount;
     }
 
+    public Long getStrategyId() {
+        return strategyId;
+    }
+
+    public void setStrategyId(Long strategyId) {
+        this.strategyId = strategyId;
+    }
+
+    public Integer getState() {
+        return state;
+    }
+
+    public void setState(Integer state) {
+        this.state = state;
+    }
+
     public String getUuid() {
         return uuid;
     }
@@ -130,5 +160,4 @@ public class UserTakeActivity {
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
     }
-
 }
