@@ -9,6 +9,12 @@ package cn.itedus.lottery.application.process.req;
 public class DrawProcessReq {
     private String uId;
     private Long activityId;
+
+    public DrawProcessReq(String uId, Long activityId) {
+        this.uId = uId;
+        this.activityId = activityId;
+    }
+
     public String getuId() {
         return uId;
     }

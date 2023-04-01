@@ -1,5 +1,6 @@
 package cn.itedus.lottery.infrastructure.repository;
 
+import cn.itedus.lottery.common.Constants;
 import cn.itedus.lottery.domain.activity.model.vo.DrawOrderVO;
 import cn.itedus.lottery.domain.activity.model.vo.UserTakeActivityVO;
 import cn.itedus.lottery.domain.activity.repository.IUserTakeActivityRepository;
@@ -10,6 +11,7 @@ import cn.itedus.lottery.infrastructure.po.UserStrategyExport;
 import cn.itedus.lottery.infrastructure.po.UserTakeActivity;
 import cn.itedus.lottery.infrastructure.po.UserTakeActivityCount;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
 import java.util.Date;
@@ -20,7 +22,7 @@ import java.util.Date;
  * @date: 2023/3/28
  * @Copyright： 练习
  */
-@Component
+@Repository
 public class UserTakeActivityRepository implements IUserTakeActivityRepository {
     @Resource
     private IUserTakeActivityCountDao userTakeActivityCountDao;
@@ -47,7 +49,7 @@ public class UserTakeActivityRepository implements IUserTakeActivityRepository {
     }
 
     @Override
-    public void takeActivity(Long activityId, String activityName, Integer takeCount, Integer userTakeLeftCount, String uId, Date takeDate, Long takeId) {
+    public void takeActivity(Long activityId, String activityName,Long strategyId, Integer takeCount, Integer userTakeLeftCount, String uId, Date takeDate, Long takeId) {
         UserTakeActivity userTakeActivity=new UserTakeActivity();
         userTakeActivity.setuId(uId);
         userTakeActivity.setTakeId(takeId);
@@ -57,8 +59,10 @@ public class UserTakeActivityRepository implements IUserTakeActivityRepository {
         if(null==userTakeLeftCount){
             userTakeActivity.setTakeCount(1);
         }else{
-            userTakeActivity.setTakeCount(takeCount-userTakeLeftCount);
+            userTakeActivity.setTakeCount(takeCount-userTakeLeftCount+1);
         }
+        userTakeActivity.setStrategyId(strategyId);
+        userTakeActivity.setState(Constants.TaskState.NO_USED.getCode());
         String uuid=uId+"_"+activityId+"_"+userTakeActivity.getTakeCount();
         userTakeActivity.setUuid(uuid);
 
@@ -99,7 +103,7 @@ public class UserTakeActivityRepository implements IUserTakeActivityRepository {
         userStrategyExport.setAwardType(drawOrder.getAwardType());
         userStrategyExport.setAwardName(drawOrder.getAwardName());
         userStrategyExport.setAwardContent(drawOrder.getAwardContent());
-        userStrategyExport.setUuid(String.valueOf(drawOrder.getOrderId()));
+        userStrategyExport.setUuid(String.valueOf(drawOrder.getTakeId()));
 
         userStrategyExportDao.insert(userStrategyExport);
 

@@ -1,2 +1,4 @@
-D:\idea_workplace\lottery_yy\lottery-interfaces\src\main\java\cn\itedus\lottery\interfaces\ActivityBooth.java
+D:\idea_workplace\lottery_yy\lottery-interfaces\src\main\java\cn\itedus\lottery\interfaces\assembler\IMapping.java
+D:\idea_workplace\lottery_yy\lottery-interfaces\src\main\java\cn\itedus\lottery\interfaces\facade\LotteryActivityBooth.java
+D:\idea_workplace\lottery_yy\lottery-interfaces\src\main\java\cn\itedus\lottery\interfaces\assembler\AwardMapping.java
 D:\idea_workplace\lottery_yy\lottery-interfaces\src\main\java\cn\itedus\lottery\LotteryApplication.java

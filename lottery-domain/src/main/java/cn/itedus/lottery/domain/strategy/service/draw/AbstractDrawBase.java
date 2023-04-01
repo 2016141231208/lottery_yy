@@ -1,6 +1,5 @@
 package cn.itedus.lottery.domain.strategy.service.draw;
 
-import cn.itedus.lottery.domain.activity.model.vo.AwardVO;
 import cn.itedus.lottery.domain.strategy.model.aggregates.StrategyRich;
 import cn.itedus.lottery.domain.strategy.model.req.DrawReq;
 import cn.itedus.lottery.domain.strategy.model.res.DrawResult;
@@ -37,11 +36,11 @@ public abstract class AbstractDrawBase extends DrawStrategySupport implements ID
             return;
         }
        //解析并解析并初始化中奖概率数据到散列表
-        List<AwardRateInfo> awardRateInfoList=new ArrayList<>(strategyDetailList.size());
+        List<AwardRateVO> awardRateVOList =new ArrayList<>(strategyDetailList.size());
         for(StrategyDetailBriefVO strategyDetail:strategyDetailList){
-            awardRateInfoList.add(new AwardRateInfo(strategyDetail.getAwardId(),strategyDetail.getAwardRate()));
+            awardRateVOList.add(new AwardRateVO(strategyDetail.getAwardId(),strategyDetail.getAwardRate()));
         }
-        drawAlgorithm.initRateTuple(strategyId,awardRateInfoList);
+        drawAlgorithm.initRateTuple(strategyId, awardRateVOList);
     }
 
     @Override
@@ -67,8 +66,8 @@ public abstract class AbstractDrawBase extends DrawStrategySupport implements ID
             return new DrawResult(uId,strategyId,Constants.DrawState.FAIL.getCode());
         }
         AwardBriefVO award=super.queryAwardInfoByAwardId(awardId);
-        DrawAwardInfo drawAwardInfo=new DrawAwardInfo(award.getAwardId(),award.getAwardType(),award.getAwardName(),award.getAwardContent());
+        DrawAwardVO drawAwardVO =new DrawAwardVO(uId,award.getAwardId(),award.getAwardType(),award.getAwardName(),award.getAwardContent());
         logger.info("执行策略抽奖完成【已中奖】，用户：{} 策略ID：{} 奖品ID：{} 奖品名称：{}", uId, strategyId, awardId, award.getAwardName());
-        return new DrawResult(uId,strategyId,Constants.DrawState.SUCCESS.getCode(),drawAwardInfo);
+        return new DrawResult(uId,strategyId,Constants.DrawState.SUCCESS.getCode(), drawAwardVO);
     }
 }

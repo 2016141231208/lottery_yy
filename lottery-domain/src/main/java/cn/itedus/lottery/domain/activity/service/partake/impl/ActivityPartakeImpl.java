@@ -48,7 +48,7 @@ public class ActivityPartakeImpl extends BaseActivityPartake {
                         return Result.buildResult(Constants.ResponseCode.NO_UPDATE);
                     }
                     //插入领取活动信息
-                    userTakeActivityRepository.takeActivity(bill.getActivityId(),bill.getActivityName(), bill.getTakeCount(), bill.getUserTakeLeftCount(),partake.getuId(),partake.getPartakeDate(),takeId);
+                    userTakeActivityRepository.takeActivity(bill.getActivityId(),bill.getActivityName(),bill.getStrategyId(), bill.getTakeCount(), bill.getUserTakeLeftCount(),partake.getuId(),partake.getPartakeDate(),takeId);
                 }catch (DuplicateKeyException e){
                     status.setRollbackOnly();
                     logger.error("领取活动，唯一索引冲突 activityId:{} uId:{}",partake.getActivityId(),partake.getuId());
@@ -95,7 +95,7 @@ public class ActivityPartakeImpl extends BaseActivityPartake {
             return Result.buildResult(Constants.ResponseCode.UN_ERROR, "活动剩余库存非可用");
         }
         //检验：个人库存-个人活动剩余可领取次数
-        if(bill.getUserTakeLeftCount()<=0){
+        if(null != bill.getUserTakeLeftCount() && bill.getUserTakeLeftCount() <= 0){
             logger.warn("个人领取次数非可用 userTakeLeftCount：{}", bill.getUserTakeLeftCount());
             return Result.buildResult(Constants.ResponseCode.UN_ERROR, "个人领取次数非可用");
         }

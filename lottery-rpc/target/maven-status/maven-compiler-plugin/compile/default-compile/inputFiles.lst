@@ -1,4 +1,5 @@
-D:\idea_workplace\lottery_yy\lottery-rpc\src\main\java\cn\itedus\lottery\rpc\dto\ActivityDto.java
-D:\idea_workplace\lottery_yy\lottery-rpc\src\main\java\cn\itedus\lottery\rpc\req\ActivityReq.java
-D:\idea_workplace\lottery_yy\lottery-rpc\src\main\java\cn\itedus\lottery\rpc\IActivityBooth.java
-D:\idea_workplace\lottery_yy\lottery-rpc\src\main\java\cn\itedus\lottery\rpc\res\ActivityRes.java
+D:\idea_workplace\lottery_yy\lottery-rpc\src\main\java\cn\itedus\lottery\rpc\res\DrawRes.java
+D:\idea_workplace\lottery_yy\lottery-rpc\src\main\java\cn\itedus\lottery\rpc\req\QuantificationDrawReq.java
+D:\idea_workplace\lottery_yy\lottery-rpc\src\main\java\cn\itedus\lottery\rpc\dto\AwardDTO.java
+D:\idea_workplace\lottery_yy\lottery-rpc\src\main\java\cn\itedus\lottery\rpc\req\DrawReq.java
+D:\idea_workplace\lottery_yy\lottery-rpc\src\main\java\cn\itedus\lottery\rpc\ILotteryActivityBooth.java
