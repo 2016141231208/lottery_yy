@@ -73,6 +73,7 @@ cn\itedus\lottery\domain\rule\service\engine\impl\RuleEngineHandle.class
 cn\itedus\lottery\domain\award\service\factory\GoodsConfig.class
 cn\itedus\lottery\domain\strategy\service\algorithm\BaseAlgorithm.class
 cn\itedus\lottery\domain\strategy\service\draw\AbstractDrawBase.class
+cn\itedus\lottery\domain\activity\model\vo\InvoiceVO.class
 cn\itedus\lottery\domain\strategy\model\vo\AwardRateVO.class
 cn\itedus\lottery\domain\support\ids\policy\SnowFlake.class
 cn\itedus\lottery\domain\support\ids\IdContext.class

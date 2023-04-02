@@ -7,4 +7,5 @@ package cn.itedus.lottery.domain.award.repository;
  * @Copyright： 练习
  */
 public interface IOrderRepository {
+    void updateUserAwardState(String uId,Long orderId, String awardId, Integer grantState);
 }

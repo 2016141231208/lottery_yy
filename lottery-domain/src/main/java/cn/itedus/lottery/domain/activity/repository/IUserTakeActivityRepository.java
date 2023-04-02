@@ -44,5 +44,7 @@ public interface IUserTakeActivityRepository {
     void saveUserStrategyExport(DrawOrderVO drawOrder);
 
     int lockTakeActivity(String getuId, Long activityId,Long takeId);
+
+    void updateInvoiceMqState(String uId, Long orderId, Integer mqState);
 }
 

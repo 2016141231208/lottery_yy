@@ -55,18 +55,21 @@ public abstract class AbstractDrawBase extends DrawStrategySupport implements ID
         //4.执行抽奖算法
         String awardId=this.drawAlgorithm(req.getStrategyId(),drawAlgorithmGroup.get(strategy.getStrategyMode()),excludeAwardIds);
         //5.包装中奖结果
-        return buildDrawResult(req.getuId(),req.getStrategyId(),awardId);
+        return buildDrawResult(req.getuId(),req.getStrategyId(),awardId,strategy);
     }
 
     protected abstract List<String> queryExcludeAwardIds(Long strategyId) ;
     protected abstract String drawAlgorithm(Long strategyId, IDrawAlgorithm drawAlgorithm, List<String> excludeAwardIds);
-    private DrawResult buildDrawResult(String uId,Long strategyId,String awardId){
+    private DrawResult buildDrawResult(String uId,Long strategyId,String awardId,StrategyBriefVO strategy){
         if(null==awardId){
             logger.info("执行策略抽奖完成【未中奖】，用户：{} 策略ID：{}",uId,strategyId);
             return new DrawResult(uId,strategyId,Constants.DrawState.FAIL.getCode());
         }
         AwardBriefVO award=super.queryAwardInfoByAwardId(awardId);
         DrawAwardVO drawAwardVO =new DrawAwardVO(uId,award.getAwardId(),award.getAwardType(),award.getAwardName(),award.getAwardContent());
+        drawAwardVO.setStrategyMode(strategy.getStrategyMode());
+        drawAwardVO.setGrantType(strategy.getGrantType());
+        drawAwardVO.setGrantDate(strategy.getGrantDate());
         logger.info("执行策略抽奖完成【已中奖】，用户：{} 策略ID：{} 奖品ID：{} 奖品名称：{}", uId, strategyId, awardId, award.getAwardName());
         return new DrawResult(uId,strategyId,Constants.DrawState.SUCCESS.getCode(), drawAwardVO);
     }

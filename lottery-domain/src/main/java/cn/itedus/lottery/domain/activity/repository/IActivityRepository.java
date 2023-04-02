@@ -46,4 +46,6 @@ public interface IActivityRepository {
      */
 
     int subtractionActivityStock(Long activityId);
+
+    List<ActivityVO> scanToDoActivityList(Long id);
 }
